@@ -1,0 +1,149 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+#start-screen {
+  height: 900px;
+  display: block;
+  text-align: center;
+  border: 10px double purple;
+}
+
+#start-screen > h1 {
+  background-color: yellow;
+  margin: 0 auto;
+  margin-top: 140px;
+  width: 24%;
+}
+
+#start-screen > h2 {
+  margin: 30px;
+  color: purple;
+}
+
+#start-screen > h3 {
+  color: grey;
+}
+
+#start-screen > .credit-name {
+  color: white;
+}
+
+#first-entry-field{
+  display: inline;
+  height: 200px;
+}
+
+#first-entry-field label{
+  color: white;
+  font-size: 22px;
+  height: 22px;
+}
+
+.input-name{
+  background-color: black;
+  font-size: 22px;
+  border: none;
+  color: white;
+}
+
+.input-name > placeholder {
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  color: white;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.cell0 .cell1 .cell2 .cell3 .cell4 {
+  color: white;
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-color: grey;
+  border: 1px solid black;
+}
+
+.row0 .row1 .row2 .row3 .row4 {
+  width: 170px;
+  display: flex;
+  flex-direction: nowrap;
+}
+
+#game {
+  background-color: black;
+  height: 700px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  position: absolute;
+}
+
+.rooms {
+  width: 520px;
+  height: 390px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 1px red;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  background-image: url("img/player.png");
+  background-size: cover;
+  position: absolute;
+}
+
+.wall {
+  background: url("img/equalsignblackback.png");
+  background-size: cover;
+}
+
+.wall2 {
+  background: url("img/verticalslashblack.png");
+  background-size: cover;
+}
+
+.space {
+  background: url("img/whitebox.png");
+  background-size: cover;
+}
+
+.entrance {
+  background: url("img/hashtagblack.png");
+  background-size: cover;
+}
+
+.enemy {
+  width: 30px;
+  height: 30px;
+  background: url("img/blacke.png");
+  background-size: cover;
+  position: absolute;
+}
+
+.door {
+  width: 30px;
+  height: 30px;
+  background: url("img/open-white-door.jpg");
+  background-size: cover;
+}
+
+.coins {
+  width: 30px;
+  height: 30px;
+  background: url("img/whiteeuro.png");
+  background-size: cover;
+  position: absolute;
+}

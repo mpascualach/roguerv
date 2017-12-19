@@ -49,8 +49,13 @@ Player.prototype.moveUp = function(board, enemy) {
     }
   } else {
     this.movePlayer();
-    console.log(this.x + "," + this.y);
     this.updatePlayer();
+    if (this.y == coins.posy && this.x == coins.posx){
+      $(".coins").remove();
+      this.score += coins.score;
+      $("#score").html("Score: " + this.score);
+      board.turn = false;
+    }
   }
   return true;
 };
@@ -63,7 +68,7 @@ Player.prototype.moveDown = function(board, enemy) {
   this.y = this.y + 1;
   // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
   if (this.y == enemy.posy && this.x == enemy.posx) {
-    this.health = this.health - enemy.attack;
+    this.health -= enemy.attack;
     if (this.health === 0){
       $("#game").hide();
       $("#game-over").show();
@@ -76,7 +81,10 @@ Player.prototype.moveDown = function(board, enemy) {
     this.movePlayer();
     this.updatePlayer();
     if (this.y == coins.posy && this.x == coins.posx){
-
+      $(".coins").remove();
+      this.score += coins.score;
+      $("#score").html("Score: " + this.score);
+      board.turn = false;
     }
   }
 };
@@ -101,6 +109,12 @@ Player.prototype.moveLeft = function(board, enemy) {
   } else {
     this.movePlayer();
     this.updatePlayer();
+    if (this.y == coins.posy && this.x == coins.posx){
+      $(".coins").remove();
+      this.score += coins.score;
+      $("#score").html("Score: " + this.score);
+      board.turn = false;
+    }
   }
 };
 
@@ -123,8 +137,13 @@ Player.prototype.moveRight = function(board, enemy) {
     }
   } else {
     this.movePlayer();
-    console.log(this.x + "," + this.y);
     this.updatePlayer();
+    if (this.y == coins.posy && this.x == coins.posx){
+      $(".coins").remove();
+      this.score += coins.score;
+      $("#score").html("Score: " + this.score);
+      board.turn = false;
+    }
   }
 };
 

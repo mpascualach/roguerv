@@ -14,7 +14,6 @@ $(document).ready(function() {
   //     $("#start-screen").hide();
   //     $("#first-entry-field").hide();
   //     $("#game").show();
-      $("game-over").hide()
       board = new Board();
       player = new Player(20, 80, 30);
       enemy = new Enemy();

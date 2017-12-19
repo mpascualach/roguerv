@@ -158,3 +158,14 @@ body {
   background-size: cover;
   position: absolute;
 }
+
+#game-over {
+  display: none;
+}
+
+#game-over h1 {
+  color: white;
+  position: relative;
+  left: 45%;
+  top: 150px;
+}

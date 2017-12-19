@@ -63,6 +63,17 @@ body {
     to { opacity: 0; }
 }
 
+#tally {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 25px;
+  width: 45%;
+  position: relative;
+  left: 30%;
+}
+
 .cell0 .cell1 .cell2 .cell3 .cell4 {
   color: white;
   display: inline-block;

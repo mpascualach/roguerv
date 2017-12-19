@@ -36,10 +36,17 @@ Player.prototype.moveUp = function(board, enemy) {
     return false;
   }
   this.y = this.y - 1;
+  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
   if (this.y == enemy.posy && this.x == enemy.posx) {
-    player.collide();
-    this.health = this.health - this.collide();
-    alert("You have lost 10 health");
+    this.health = this.health - enemy.attack;
+    if (this.health === 0){
+      $("#game").hide();
+      $("#game-over").show();
+    }
+    else {
+      alert("You have lost 10 health");
+      $("#health").html("Health: " + this.health);
+    }
   } else {
     this.movePlayer();
     console.log(this.x + "," + this.y);
@@ -54,15 +61,23 @@ Player.prototype.moveDown = function(board, enemy) {
     return false;
   }
   this.y = this.y + 1;
+  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
   if (this.y == enemy.posy && this.x == enemy.posx) {
-    console.log("coliso");
-    player.collide();
-    alert("You have lost 10 health");
-    this.health = health;
+    this.health = this.health - enemy.attack;
+    if (this.health === 0){
+      $("#game").hide();
+      $("#game-over").show();
+    }
+    else {
+      alert("You have lost 10 health");
+      $("#health").html("Health: " + this.health);
+    }
   } else {
     this.movePlayer();
-    console.log(this.x + "," + this.y);
     this.updatePlayer();
+    if (this.y == coins.posy && this.x == coins.posx){
+
+    }
   }
 };
 
@@ -72,10 +87,17 @@ Player.prototype.moveLeft = function(board, enemy) {
     return false;
   }
   this.x = this.x - 1;
+  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
   if (this.y == enemy.posy && this.x == enemy.posx) {
-    player.collide();
-    this.health = this.health - this.collide();
-    alert("You have lost 10 health");
+    this.health = this.health - enemy.attack;
+    if (this.health === 0){
+      $("#game").hide();
+      $("#game-over").show();
+    }
+    else {
+      alert("You have lost 10 health");
+      $("#health").html("Health: " + this.health);
+    }
   } else {
     this.movePlayer();
     this.updatePlayer();
@@ -88,19 +110,22 @@ Player.prototype.moveRight = function(board, enemy) {
     return false;
   }
   this.x = this.x + 1;
+  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
   if (this.y == enemy.posy && this.x == enemy.posx) {
-    this.collide();
-    this.health = this.health - 10;
-    alert("You have lost 10 health");
+    this.health = this.health - enemy.attack;
+    if (this.health === 0){
+      $("#game").hide();
+      $("#game-over").show();
+    }
+    else {
+      alert("You have lost 10 health");
+      $("#health").html("Health: " + this.health);
+    }
   } else {
     this.movePlayer();
     console.log(this.x + "," + this.y);
     this.updatePlayer();
   }
-};
-
-Player.prototype.collide = function() {
-  console.log("atacar o defender");
 };
 
 

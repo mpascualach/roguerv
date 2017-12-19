@@ -11,15 +11,11 @@ Coins.prototype.coinsPos = function(table) {
 };
 
 Coins.prototype.generatecoins = function(table) {
-  console.log(table);
   if (table.room1[coins.posy][coins.posx] !== "." && table.room1[coins.posy][coins.posx] !== "#") {
     this.posx='';
     this.posy='';
-    console.log("volvemos a generar");
     this.coinsPos(table);
   } else {
     $(".row" + this.posy + " >.cell" + this.posx).append("<div class='coins'</div>");
-    console.log("coins sighted");
-    console.log("row:"+this.posy+","+" "+"column:"+this.posx);
   }
 };

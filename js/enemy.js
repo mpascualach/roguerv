@@ -4,6 +4,20 @@ function Enemy() {
   this.mov = ["left", "right", "up", "down"];
   this.attack = 10;
   this.health = 3;
+  this.move = function(board){
+    if (board.turn == true){
+      var d = this.mov[Math.floor(Math.random()*this.mov.length)];
+      if (d == "left"){
+        if (board.room1[enemy.y - 1][enemy.x] == "=" || board.room1[enemy.y-1][enemy.x] == "C"){
+          return false;
+        }
+        else {
+          this.pos[0] = (this.pos[0])+1;
+        }
+      board.turn = false;
+      }
+    }
+  };
 }
 
 Enemy.prototype.enemyPos = function(table) {
@@ -19,20 +33,5 @@ Enemy.prototype.generateEnemy = function(table) {
     this.enemyPos(table);
   } else {
     $(".row" + this.posy + " >.cell" + this.posx).append("<div class='enemy'</div>");
-  }
-};
-
-Enemy.prototype.move = function(board){
-  if (board.turn == true){
-    var d = this.mov[Math.floor(Math.random()*this.mov.length)];
-    if (d == "left"){
-      if (board.room1[enemy.y - 1][enemy.x] == "=" || board.room1[enemy.y-1][enemy.x] == "C"){
-        return false;
-      }
-      else {
-        this.pos[0] = (this.pos[0])+1;
-      }
-    board.turn = false;
-    }
   }
 };

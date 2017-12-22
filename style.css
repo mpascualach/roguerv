@@ -159,13 +159,42 @@ body {
   position: absolute;
 }
 
+#game {
+  /*display: none;*/
+}
+
 #game-over {
   display: none;
+  margin-top: 60px;
+}
+
+#game-over .container {
+  width: 100%;
+  display: table;
+  margin: 0 auto;
 }
 
 #game-over h1 {
   color: white;
   position: relative;
-  left: 45%;
-  top: 150px;
+  left: 43%;
+  top: 70px;
+  font-size: 40px;
+  margin: 0 auto;
+}
+
+#game-over img {
+  position: relative;
+  margin-left: 40%;
+  margin-top: 120px;
+}
+
+#game-over button {
+  position: relative;
+  top: 80px;
+  right: 240px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  border: none;
 }

@@ -1,19 +1,19 @@
 var board;
 var player;
 $(document).ready(function() {
-  // $("#game").hide();
-  // $(".input-name").on("keydown", function(e) {
-  //   var code = e.keyCode;
-  //   if (code == 13) {
-  //     var val = $(".input-name").val();
-  //     if (!val) {
-  //       alert("Hello Ronald!");
-  //     } else {
-  //       alert("Hello " + "" + val);
-  //     }
-  //     $("#start-screen").hide();
-  //     $("#first-entry-field").hide();
-  //     $("#game").show();
+  $("#game").hide();
+  $(".input-name").on("keydown", function(e) {
+    var code = e.keyCode;
+    if (code == 13) {
+      var val = $(".input-name").val();
+      if (!val) {
+        alert("Hello Ronald!");
+      } else {
+        alert("Hello " + "" + val);
+      }
+      $("#start-screen").hide();
+      $("#first-entry-field").hide();
+      $("#game").show();
       board = new Board();
       player = new Player(20, 80, 30);
       enemy = new Enemy();
@@ -21,7 +21,7 @@ $(document).ready(function() {
       generateRooms(board);
       player.drawPlayer();
       setScore();
-      // lightRooms(board);
+      lightRooms(board);
       board.setDoor();
       enemy.enemyPos(board);
       coins.coinsPos(board);
@@ -48,10 +48,8 @@ $(document).ready(function() {
           board.setDoor();
           enemy.enemyPos(board);
           coins.coinsPos(board);
-
-          // player.gotoNextLevel();
         }
       });
-    });
-  // });
-// });
+    }
+  });
+});

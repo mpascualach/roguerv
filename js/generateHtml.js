@@ -33,7 +33,7 @@ function setScore(){
 function lightRooms(board){
   for (var i = player.y - 2; i < player.y + 3; i++){
     for (var j = player.x - 2; j < player.x + 3; j++){
-      $(".row" + i + " > .cell" + j).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
+      $(".row" + i + " > .cell" + j).show();
     }
   }
 }

@@ -49,7 +49,6 @@ function Board() {
     ["=","=","=","C","=","=","=","=","=","=","=","|","C"],
     ["C","C","C","C","C","C","C","C","C","C","C","C","C"],
   ];
-  this.nextRooms = [];
   this.turn = false;
   this.dx = 0;
   this.dy = 0;
@@ -71,8 +70,15 @@ Board.prototype.setDoor = function() {
   }
 };
 
+Board.prototype.eraseMessage = function(){
+  $("#message").html("");
+};
+
 Board.prototype.nextLevel = function() {
   this.level++;
+  if (this.room1 === this.room2){
+    this.room2 = this.room3;
+  }
   this.room1 = this.room2;
   lightRooms(board);
 };

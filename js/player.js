@@ -55,7 +55,7 @@ Player.prototype.moveUp = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
-      board.turn = true;
+      $("#message").html("You have lost " + enemy.attack + " health");
     }
   }
   return true;
@@ -86,6 +86,7 @@ Player.prototype.moveDown = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
+      $("#message").html("You have lost " + enemy.attack + " health");
     }
   }
 };
@@ -107,6 +108,7 @@ Player.prototype.moveLeft = function(board, enemy) {
     else {
       alert("You have lost 10 health");
       $("#health").html("Health: " + this.health);
+      $("#message").html("You have lost " + enemy.attack + " health");
     }
   } else {
     this.movePlayer();
@@ -136,6 +138,7 @@ Player.prototype.moveRight = function(board, enemy) {
     else {
       alert("You have lost 10 health");
       $("#health").html("Health: " + this.health);
+      $("#message").html("You have lost " + enemy.attack + " health");
     }
   } else {
     this.movePlayer();

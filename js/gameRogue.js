@@ -15,7 +15,7 @@ $(document).ready(function() {
   //     $("#first-entry-field").hide();
   //     $("#game").show();
       board = new Board();
-      player = new Player(20, 80, 30);
+      player = new Player(100, 80, 30);
       enemy = new Enemy();
       coins = new Coins(20);
       generateRooms(board);

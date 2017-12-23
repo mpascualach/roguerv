@@ -163,8 +163,12 @@ body {
   position: absolute;
 }
 
-#game {
-  /*display: none;*/
+#message {
+  color: white;
+  font-size: 25px;
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 #game-over {

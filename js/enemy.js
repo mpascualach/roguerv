@@ -4,20 +4,6 @@ function Enemy() {
   this.mov = ["left", "right", "up", "down"];
   this.attack = 10;
   this.health = 3;
-  this.move = function(board){
-    if (board.turn == true){
-      var d = this.mov[Math.floor(Math.random()*this.mov.length)];
-      if (d == "left"){
-        if (board.room1[enemy.y - 1][enemy.x] == "=" || board.room1[enemy.y-1][enemy.x] == "C"){
-          return false;
-        }
-        else {
-          this.pos[0] = (this.pos[0])+1;
-        }
-      board.turn = false;
-      }
-    }
-  };
 }
 
 Enemy.prototype.enemyPos = function(table) {
@@ -27,7 +13,7 @@ Enemy.prototype.enemyPos = function(table) {
 };
 
 Enemy.prototype.generateEnemy = function(table) {
-  if (table.room1[enemy.posy][enemy.posx] !== "." && table.room1[enemy.posy][enemy.posx] !== "#") {
+  if (table.room1[this.posy][this.posx] !== "." && table.room1[enemy.posy][enemy.posx] !== "#") {
     this.posx='';
     this.posy='';
     this.enemyPos(table);
@@ -35,3 +21,50 @@ Enemy.prototype.generateEnemy = function(table) {
     $(".row" + this.posy + " >.cell" + this.posx).append("<div class='enemy'</div>");
   }
 };
+
+// Enemy.prototype.move = function(){
+//   if (board.turn == true){
+//     this.direction = this.mov[Math.floor(Math.random() * this.mov.length)];
+//     switch(this.direction){
+//       case 'left':
+//         if (board.room1[this.posy][this.posx-1] !== "." && table.room1[enemy.posy][enemy.posx-1] !== "#"){
+//           this.direction = this.mov[Math.floor(Math.random() * this.mov.length)];
+//           this.move();
+//         }
+//         else {
+//           this.posx--;
+//           board.turn = false;
+//         }
+//         break;
+//       case 'right':
+//         if (board.room1[this.posy][this.posx+1] !== "." && table.room1[enemy.posy][enemy.posx+1] !== "#"){
+//           this.direction = this.mov[Math.floor(Math.random() * this.mov.length)];
+//           this.move();
+//         }
+//         else {
+//           this.posx++;
+//           board.turn = false;
+//         }
+//         break;
+//       case 'up':
+//         if (board.room1[this.posy-1][this.posx] !== "." && table.room1[enemy.posy-1][enemy.posx] !== "#"){
+//           this.direction = this.mov[Math.floor(Math.random() * this.mov.length)];
+//           this.move();
+//         }
+//         else {
+//           this.posy--;
+//           board.turn = false;
+//         }
+//         break;
+//       case 'down':
+//         if (board.room1[this.posy+1][this.posx] !== "." && table.room1[enemy.posy+1][enemy.posx] !== "#"){
+//           this.direction = this.mov[Math.floor(Math.random() * this.mov.length)];
+//           this.move();
+//         }
+//         else {
+//           this.posy++;
+//           board.turn = false;
+//         }
+//     }
+//   }
+// };

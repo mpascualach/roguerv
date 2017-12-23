@@ -4,22 +4,28 @@ function generateRooms(board) {
     for (var j = 0; j < board.room1[0].length; j++) {
       switch (board.room1[i][j]) {
         case '=':
-          $(".row" + i).append("<div class='cell" + j + " wall' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " wall hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
           break;
         case '|':
-          $(".row" + i).append("<div class='cell" + j + " wall2' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " wall2 hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
           break;
         case '+':
-          $(".row" + i).append("<div class='cell" + j + " entrance' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " entrance hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
           break;
         case '#':
-          $(".row" + i).append("<div class='cell" + j + " entrance' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " entrance hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
           break;
         case '.':
-          $(".row" + i).append("<div class='cell" + j + " space' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " space hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
           break;
         case "C":
-          $(".row" + i).append("<div class='cell" + j + "' style='height:30px;width:30px'></div>");
+          $(".row" + i).append("<div class='cell" + j + " hide' style='height:30px;width:30px'></div>");
+          // $(".row" + i + " > .cell" + j).hide();
       }
     }
   }
@@ -33,7 +39,7 @@ function setScore(){
 function lightRooms(board){
   for (var i = player.y - 2; i < player.y + 3; i++){
     for (var j = player.x - 2; j < player.x + 3; j++){
-      $(".row" + i + " > .cell" + j).show();
+      $(".row" + i + " > .cell" + j).removeClass("hide");
     }
   }
 }

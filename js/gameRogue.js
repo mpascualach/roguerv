@@ -1,19 +1,19 @@
 var board;
 var player;
 $(document).ready(function() {
-  $("#game").hide();
-  $(".input-name").on("keydown", function(e) {
-    var code = e.keyCode;
-    if (code == 13) {
-      var val = $(".input-name").val();
-      if (!val) {
-        alert("Hello Ronald!");
-      } else {
-        alert("Hello " + "" + val);
-      }
-      $("#start-screen").hide();
-      $("#first-entry-field").hide();
-      $("#game").show();
+  // $("#game").hide();
+  // $(".input-name").on("keydown", function(e) {
+  //   var code = e.keyCode;
+  //   if (code == 13) {
+  //     var val = $(".input-name").val();
+  //     if (!val) {
+  //       alert("Hello Ronald!");
+  //     } else {
+  //       alert("Hello " + "" + val);
+  //     }
+  //     $("#start-screen").hide();
+  //     $("#first-entry-field").hide();
+  //     $("#game").show();
       board = new Board();
       player = new Player(20, 80, 30);
       enemy = new Enemy();
@@ -50,6 +50,6 @@ $(document).ready(function() {
           coins.coinsPos(board);
         }
       });
-    }
-  });
-});
+    });
+  // });
+// });

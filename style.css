@@ -136,6 +136,10 @@ body {
   background-size: cover;
 }
 
+.hide {
+  background: url("img/black-background.jpg")
+}
+
 .enemy {
   width: 30px;
   height: 30px;

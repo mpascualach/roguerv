@@ -36,7 +36,8 @@ Player.prototype.moveUp = function(board, enemy) {
     return false;
   }
   this.y = this.y - 1;
-  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
+  board.turn = true;
+  lightRooms(board);
   if (this.y == enemy.posy && this.x == enemy.posx) {
     this.health = this.health - enemy.attack;
     if (this.health === 0){
@@ -54,7 +55,7 @@ Player.prototype.moveUp = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
-      board.turn = false;
+      board.turn = true;
     }
   }
   return true;
@@ -66,7 +67,8 @@ Player.prototype.moveDown = function(board, enemy) {
     return false;
   }
   this.y = this.y + 1;
-  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
+  board.turn = true;
+  lightRooms(board);
   if (this.y == enemy.posy && this.x == enemy.posx) {
     this.health -= enemy.attack;
     if (this.health === 0){
@@ -84,7 +86,6 @@ Player.prototype.moveDown = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
-      board.turn = false;
     }
   }
 };
@@ -95,7 +96,8 @@ Player.prototype.moveLeft = function(board, enemy) {
     return false;
   }
   this.x = this.x - 1;
-  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
+  board.turn = true;
+  lightRooms(board);
   if (this.y == enemy.posy && this.x == enemy.posx) {
     this.health = this.health - enemy.attack;
     if (this.health === 0){
@@ -113,7 +115,6 @@ Player.prototype.moveLeft = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
-      board.turn = false;
     }
   }
 };
@@ -124,7 +125,8 @@ Player.prototype.moveRight = function(board, enemy) {
     return false;
   }
   this.x = this.x + 1;
-  // $(".row" + (this.y) + " > .cell" + (this.x)).css({"border-color": "#C1E0FF", "border-width":"1px", "border-style":"solid"});
+  board.turn = true;
+  lightRooms(board);
   if (this.y == enemy.posy && this.x == enemy.posx) {
     this.health = this.health - enemy.attack;
     if (this.health === 0){
@@ -142,7 +144,6 @@ Player.prototype.moveRight = function(board, enemy) {
       $(".coins").remove();
       this.score += coins.score;
       $("#score").html("Score: " + this.score);
-      board.turn = false;
     }
   }
 };
